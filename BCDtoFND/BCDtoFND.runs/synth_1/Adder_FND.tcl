@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/synth_1/BCDtoFND.tcl"
+  variable script "D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/synth_1/Adder_FND.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
 set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14204-LAPTOP-F74GHAFM/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -90,9 +92,13 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/new/BCDtoFND.v
   D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/new/BCDtoFND_Decoder.v
   D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/new/FND_Select_Decoder.v
-  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/new/BCDtoFND.v
+  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/imports/new/Full_Adder.v
+  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/imports/new/Full_Adder_fourbit.v
+  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/imports/new/HalfAdder.v
+  D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.srcs/sources_1/new/Adder_FND.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -110,17 +116,17 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top BCDtoFND -part xc7a35tcpg236-1
+synth_design -top Adder_FND -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 
 
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef BCDtoFND.dcp
+write_checkpoint -force -noxdef Adder_FND.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file BCDtoFND_utilization_synth.rpt -pb BCDtoFND_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file Adder_FND_utilization_synth.rpt -pb Adder_FND_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
