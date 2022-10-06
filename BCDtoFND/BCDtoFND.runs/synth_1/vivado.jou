@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Oct  6 13:50:49 2022
+# Process ID: 8036
+# Current directory: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/synth_1
+# Command line: vivado.exe -log BCDtoFND.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BCDtoFND.tcl
+# Log file: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/synth_1/BCDtoFND.vds
+# Journal file: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source BCDtoFND.tcl -notrace

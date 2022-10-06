@@ -2,7 +2,7 @@
 
 module BCDtoFND(
     input [1:0] i_digitSelect,
-    input [3:0] i_value.
+    input [3:0] i_value,
     input i_en,
     output [3:0] o_digit,
     output [7:0] o_fndFont 
