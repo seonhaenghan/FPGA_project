@@ -2,11 +2,11 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Oct  6 15:15:44 2022
-# Process ID: 15936
+# Start of session at: Thu Oct  6 16:39:37 2022
+# Process ID: 19240
 # Current directory: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/impl_1
-# Command line: vivado.exe -log Adder_FND.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Adder_FND.tcl -notrace
-# Log file: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/impl_1/Adder_FND.vdi
+# Command line: vivado.exe -log Caculator.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Caculator.tcl -notrace
+# Log file: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/impl_1/Caculator.vdi
 # Journal file: D:/FPGA/FPGA_project/BCDtoFND/BCDtoFND.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source Adder_FND.tcl -notrace
+source Caculator.tcl -notrace
