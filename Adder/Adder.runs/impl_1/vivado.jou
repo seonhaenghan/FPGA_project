@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Oct  5 16:32:40 2022
+# Process ID: 19672
+# Current directory: D:/FPGA/FPGA_project/Adder/Adder.runs/impl_1
+# Command line: vivado.exe -log FullAderr_Sub.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FullAderr_Sub.tcl -notrace
+# Log file: D:/FPGA/FPGA_project/Adder/Adder.runs/impl_1/FullAderr_Sub.vdi
+# Journal file: D:/FPGA/FPGA_project/Adder/Adder.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source FullAderr_Sub.tcl -notrace
