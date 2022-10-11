@@ -68,6 +68,7 @@
 !*.bmm
 !*.xmp
 !*.md
+
 ### XilinxVivado ###
 #.xci: IP-core property file with core container disabled
 #*.dcp (checkpoint files: better be ignored!)
