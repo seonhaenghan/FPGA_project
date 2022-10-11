@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Button_Counter.srcs/sources_1/new/counter.v" \
+"../../../../Button_Counter.srcs/sources_1/new/top_counter.v" \
+"../../../../Button_Counter.srcs/sim_1/new/tb_counter.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

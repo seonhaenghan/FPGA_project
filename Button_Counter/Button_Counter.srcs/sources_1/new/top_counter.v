@@ -2,18 +2,27 @@
 
 module top_counter(
 
-    input i_btn,
+    input i_clk,
     input i_reset,
-    output [2:0] o_led
-
+    output [7:0] o_led
     );
 
-    counter C1(
-    .i_btn_clk(i_btn),
+    wire w_clk;
+
+    clock_divider clk_div(
+    .i_clk(i_clk),
+    .i_reset(i_reset),
+    .o_clk(w_clk)
+    );
+
+
+    counter cnt(
+    .i_clk(w_clk),
     .i_reset(i_reset),
     .o_counter(o_led)
     );
 
+    
 
 endmodule
 
