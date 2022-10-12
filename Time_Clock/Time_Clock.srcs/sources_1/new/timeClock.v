@@ -2,7 +2,7 @@
 
 
 module timeClock(
-    input i_clk, i_reset, i_modeSW,
+    input i_clk, i_reset, i_modeSW, i_en,
     output [3:0] o_fndDigitPosition,
     output [7:0] o_fndFont
     );
@@ -15,7 +15,7 @@ module timeClock(
     .o_clk(w_clk_1kHz)   
     );
 
-    wire [1:0] w_cntToDec;
+    wire [2:0] w_cntToDec;
 
     Counter_fnd cntFnd(
     .i_clk(w_clk_1kHz),
@@ -64,6 +64,14 @@ module timeClock(
     .o_b_10(w_sec_10)
     );
 
+    
+    wire [3:0] w_fndDP;
+
+    Comparator Comparator(
+    .i_msec(w_msec),
+    .o_fndDP(w_fndDP)
+    );
+
     wire [3:0] w_h_m_mux, w_s_ms_mux;
 
     Mux4_1 Mux_h_m(
@@ -71,6 +79,10 @@ module timeClock(
     .i_b(w_min_10), 
     .i_c(w_hour_1), 
     .i_d(w_hour_10),
+    .i_a1(11), 
+    .i_b1(11), 
+    .i_c1(w_fndDP), 
+    .i_d1(11),
     .i_select(w_cntToDec),
     .o_y(w_h_m_mux)
     );
@@ -80,6 +92,10 @@ module timeClock(
     .i_b(w_msec_10), 
     .i_c(w_sec_1), 
     .i_d(w_sec_10),
+    .i_a1(11), 
+    .i_b1(11), 
+    .i_c1(w_fndDP), 
+    .i_d1(11),
     .i_select(w_cntToDec),
     .o_y(w_s_ms_mux)
     );
@@ -94,6 +110,7 @@ module timeClock(
     );
 
     BCDtoFND BCDtoFND(
+    .i_en(i_en),
     .i_value(w_fndValue),
     .o_font(o_fndFont)
     );

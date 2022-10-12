@@ -2,16 +2,19 @@
 
 module BCDtoFND(
     input [3:0] i_value,
-    output [7:0] o_font
-
+    output [7:0] o_font,
+    input i_en
     );
 
     reg [7:0] r_font;
     assign o_font = r_font;
 
-    always @(i_value) begin
-        r_font = 8'hff;
-        case (i_value)
+    always @(i_value or i_en) begin
+        if(i_en) begin
+            r_font = 8'hff;
+        end
+        else begin
+            case (i_value)
             4'h0 : r_font = 8'hc0;
             4'h1 : r_font = 8'hf9;
             4'h2 : r_font = 8'ha4;
@@ -25,6 +28,8 @@ module BCDtoFND(
             4'ha : r_font = 8'h7f;  // dot 
             default : r_font = 8'hff;
         endcase
+        end
+        
     end
 
 endmodule

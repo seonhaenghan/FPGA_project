@@ -1,9 +1,8 @@
 `timescale 1ns / 1ps
 
-
 module Mux4_1(
-    input [3:0] i_a, i_b, i_c, i_d,
-    input [1:0] i_select,
+    input [3:0] i_a, i_b, i_c, i_d, i_a1, i_b1, i_c1, i_d1,
+    input [2:0] i_select,
     output [3:0] o_y
     );
 
@@ -12,10 +11,14 @@ module Mux4_1(
 
     always @(*) begin
         case(i_select)
-            2'b00 : r_y = i_a;
-            2'b01 : r_y = i_b;
-            2'b10 : r_y = i_c;
-            2'b11 : r_y = i_d;
+            3'b000 : r_y = i_a;
+            3'b001 : r_y = i_b;
+            3'b010 : r_y = i_c;
+            3'b011 : r_y = i_d;
+            3'b100 : r_y = i_a1;
+            3'b101 : r_y = i_b1;
+            3'b110 : r_y = i_c1;
+            3'b111 : r_y = i_d1;
         endcase
     end
 

@@ -94,6 +94,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/BCDtoFND.v
+  D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Comparator.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Counter_fnd.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Mux2_1.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Mux4_1.v
