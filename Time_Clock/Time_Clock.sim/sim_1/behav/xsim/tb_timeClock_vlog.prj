@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Time_Clock.srcs/sources_1/new/BCDtoFND.v" \
+"../../../../Time_Clock.srcs/sources_1/new/Counter_fnd.v" \
+"../../../../Time_Clock.srcs/sources_1/new/Mux2_1.v" \
+"../../../../Time_Clock.srcs/sources_1/new/Mux4_1.v" \
+"../../../../Time_Clock.srcs/sources_1/new/clock_divider_fnd.v" \
+"../../../../Time_Clock.srcs/sources_1/new/decoder_2x4.v" \
+"../../../../Time_Clock.srcs/sources_1/new/digitDivider.v" \
+"../../../../Time_Clock.srcs/sources_1/new/timeClock.v" \
+"../../../../Time_Clock.srcs/sources_1/new/timeClockCounter.v" \
+"../../../../Time_Clock.srcs/sim_1/new/tb_timeClock.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../UpCounter.srcs/sources_1/new/BCDtoFND_Decoder.v" \
+"../../../../UpCounter.srcs/sources_1/new/clock_divider.v" \
+"../../../../UpCounter.srcs/sources_1/new/clock_divider_count.v" \
+"../../../../UpCounter.srcs/sources_1/new/counter_data.v" \
+"../../../../UpCounter.srcs/sources_1/new/counter_fnd.v" \
+"../../../../UpCounter.srcs/sources_1/new/decoder_2x4.v" \
+"../../../../UpCounter.srcs/sources_1/new/digit_divider.v" \
+"../../../../UpCounter.srcs/sources_1/new/mux_4x1.v" \
+"../../../../UpCounter.srcs/sources_1/new/upcount.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
