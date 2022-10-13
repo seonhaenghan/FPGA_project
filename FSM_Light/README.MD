@@ -24,3 +24,5 @@
 
 3-2 시간 관련된 Clcok count 작성 >> Timer 
 
+![image](https://user-images.githubusercontent.com/109562373/195525380-73703dc7-d2bf-4382-bcb5-e88664337917.png)
+
