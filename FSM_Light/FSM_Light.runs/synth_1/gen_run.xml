@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1665634574">
-  <File Type="PA-TCL" Name="FSM_Light.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="FSM_Light_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="FSM_Light_reports.tcl"/>
-  <File Type="RDS-RDS" Name="FSM_Light.vds"/>
-  <File Type="RDS-UTIL" Name="FSM_Light_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="FSM_Light_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="FSM_Light.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FSM_Light_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="FSM_Light_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1665642615">
+  <File Type="PA-TCL" Name="top_ledLight.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_ledLight_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_ledLight_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_ledLight.vds"/>
+  <File Type="RDS-UTIL" Name="top_ledLight_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_ledLight_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_ledLight.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_ledLight_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_ledLight_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ButtonController.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/FSM_Light.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_ledLight.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -20,7 +34,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FSM_Light"/>
+      <Option Name="TopModule" Val="top_ledLight"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -45,9 +59,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
