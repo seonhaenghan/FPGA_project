@@ -2,7 +2,7 @@
 
 
 module timeClock(
-    input i_clk, i_reset, i_modeSW, i_en,
+    input i_clk, i_reset, i_modeSW, i_en, i_OnOffSW,
     output [3:0] o_fndDigitPosition,
     output [7:0] o_fndFont
     );
@@ -23,10 +23,16 @@ module timeClock(
     .o_counter(w_cntToDec)
     );
 
-
+    wire [3:0] w_digitPosition;
     decoder_2x4 decoder_2x4(
     .i_select(w_cntToDec),
-    .o_digitPosition(o_fndDigitPosition)
+    .o_digitPosition(w_digitPosition)
+    );
+
+    TriBuff TriBuff(
+    .i_x(w_digitPosition),
+    .i_en(i_OnOffSW),
+    .o_y(o_fndDigitPosition)
     );
 
 ////////////////////////////////////////fnd/////
@@ -79,9 +85,9 @@ module timeClock(
     .i_b(w_min_10), 
     .i_c(w_hour_1), 
     .i_d(w_hour_10),
-    .i_a1(11), 
+    .i_a1(w_fndDP), 
     .i_b1(11), 
-    .i_c1(w_fndDP), 
+    .i_c1(11), 
     .i_d1(11),
     .i_select(w_cntToDec),
     .o_y(w_h_m_mux)
@@ -92,9 +98,9 @@ module timeClock(
     .i_b(w_msec_10), 
     .i_c(w_sec_1), 
     .i_d(w_sec_10),
-    .i_a1(11), 
+    .i_a1(w_fndDP), 
     .i_b1(11), 
-    .i_c1(w_fndDP), 
+    .i_c1(11), 
     .i_d1(11),
     .i_select(w_cntToDec),
     .o_y(w_s_ms_mux)

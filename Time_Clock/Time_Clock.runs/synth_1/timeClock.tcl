@@ -71,9 +71,8 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3512-LAPTOP-F74GHAFM/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9328-LAPTOP-F74GHAFM/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -98,6 +97,7 @@ read_verilog -library xil_defaultlib {
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Counter_fnd.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Mux2_1.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/Mux4_1.v
+  D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/TriBuff.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/clock_divider_fnd.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/decoder_2x4.v
   D:/FPGA/FPGA_project/Time_Clock/Time_Clock.srcs/sources_1/new/digitDivider.v
