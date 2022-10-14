@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Oct 14 11:12:25 2022
-# Process ID: 22272
+# Start of session at: Fri Oct 14 10:50:56 2022
+# Process ID: 11596
 # Current directory: D:/FPGA/FPGA_project/PWM_LightControl/PWM_LightControl.runs/impl_1
 # Command line: vivado.exe -log top_LightControl.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_LightControl.tcl -notrace
 # Log file: D:/FPGA/FPGA_project/PWM_LightControl/PWM_LightControl.runs/impl_1/top_LightControl.vdi

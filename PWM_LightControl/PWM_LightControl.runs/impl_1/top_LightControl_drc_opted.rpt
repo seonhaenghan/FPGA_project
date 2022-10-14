@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Thu Oct 13 17:52:41 2022
+| Date         : Fri Oct 14 10:51:37 2022
 | Host         : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_LightControl_drc_opted.rpt -pb top_LightControl_drc_opted.pb -rpx top_LightControl_drc_opted.rpx
 | Design       : top_LightControl
