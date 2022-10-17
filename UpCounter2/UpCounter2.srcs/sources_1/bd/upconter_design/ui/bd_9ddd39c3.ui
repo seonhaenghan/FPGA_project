@@ -1,23 +1,23 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-317,-219",
+   "Default View_ScaleFactor":"1.3197",
+   "Default View_TopLeft":"-286,-198",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
 #  -string -flagsOSRD
-preplace port i_clk_0 -pg 1 -lvl 0 -x -160 -y -60 -defaultsOSRD
-preplace port i_reset_0 -pg 1 -lvl 0 -x -160 -y -30 -defaultsOSRD
-preplace portBus o_fndSelect_0 -pg 1 -lvl 2 -x 290 -y -40 -defaultsOSRD
-preplace portBus o_fndFont_0 -pg 1 -lvl 2 -x 290 -y -10 -defaultsOSRD
-preplace portBus i_value_0 -pg 1 -lvl 0 -x -160 -y 0 -defaultsOSRD
-preplace inst FndController_0 -pg 1 -lvl 1 -x 140 -y -20 -defaultsOSRD
+preplace port i_reset -pg 1 -lvl 0 -x -160 -y -30 -defaultsOSRD
+preplace port i_clk -pg 1 -lvl 0 -x -160 -y -60 -defaultsOSRD
+preplace portBus i_value -pg 1 -lvl 0 -x -160 -y 0 -defaultsOSRD
+preplace portBus o_fndSelect -pg 1 -lvl 2 -x 300 -y -40 -defaultsOSRD
+preplace portBus o_fndFont -pg 1 -lvl 2 -x 300 -y -10 -defaultsOSRD
+preplace inst FndController -pg 1 -lvl 1 -x 140 -y -20 -defaultsOSRD
 preplace netloc FndController_0_o_fndSelect 1 1 1 270 -40n
 preplace netloc FndController_0_o_fndFont 1 1 1 N -10
 preplace netloc i_clk_0_1 1 0 1 -140J -60n
 preplace netloc i_reset_0_1 1 0 1 -140J -30n
 preplace netloc i_value_0_1 1 0 1 NJ 0
-levelinfo -pg 1 -160 140 290
-pagesize -pg 1 -db -bbox -sgen -300 -100 460 160
+levelinfo -pg 1 -160 140 300
+pagesize -pg 1 -db -bbox -sgen -300 -100 470 160
 "
 }
 

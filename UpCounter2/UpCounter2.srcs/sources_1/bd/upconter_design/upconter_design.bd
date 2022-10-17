@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC3540CEB5312508F",
+      "boundary_crc": "0x870C2CF5F33F27CB",
       "device": "xc7a35tcpg236-1",
       "name": "upconter_design",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -10,26 +10,25 @@
       "validated": "true"
     },
     "design_tree": {
-      "FndController_0": ""
+      "FndController": ""
     },
     "ports": {
-      "o_fndSelect_0": {
+      "o_fndSelect": {
         "direction": "O",
         "left": "3",
         "right": "0"
       },
-      "o_fndFont_0": {
+      "o_fndFont": {
         "direction": "O",
         "left": "7",
         "right": "0"
       },
-      "i_clk_0": {
+      "i_clk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
           "ASSOCIATED_RESET": {
-            "value": "i_reset_0",
-            "value_src": "default"
+            "value": "i_reset"
           },
           "CLK_DOMAIN": {
             "value": "upconter_design_i_clk_0",
@@ -53,7 +52,7 @@
           }
         }
       },
-      "i_reset_0": {
+      "i_reset": {
         "type": "rst",
         "direction": "I",
         "parameters": {
@@ -67,14 +66,14 @@
           }
         }
       },
-      "i_value_0": {
+      "i_value": {
         "direction": "I",
         "left": "13",
         "right": "0"
       }
     },
     "components": {
-      "FndController_0": {
+      "FndController": {
         "vlnv": "xilinx.com:user:FndController:1.0",
         "xci_name": "upconter_design_FndController_0_0"
       }
@@ -82,32 +81,32 @@
     "nets": {
       "FndController_0_o_fndSelect": {
         "ports": [
-          "FndController_0/o_fndSelect",
-          "o_fndSelect_0"
+          "FndController/o_fndSelect",
+          "o_fndSelect"
         ]
       },
       "FndController_0_o_fndFont": {
         "ports": [
-          "FndController_0/o_fndFont",
-          "o_fndFont_0"
+          "FndController/o_fndFont",
+          "o_fndFont"
         ]
       },
       "i_clk_0_1": {
         "ports": [
-          "i_clk_0",
-          "FndController_0/i_clk"
+          "i_clk",
+          "FndController/i_clk"
         ]
       },
       "i_reset_0_1": {
         "ports": [
-          "i_reset_0",
-          "FndController_0/i_reset"
+          "i_reset",
+          "FndController/i_reset"
         ]
       },
       "i_value_0_1": {
         "ports": [
-          "i_value_0",
-          "FndController_0/i_value"
+          "i_value",
+          "FndController/i_value"
         ]
       }
     }
