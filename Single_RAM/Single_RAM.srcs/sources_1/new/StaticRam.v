@@ -8,7 +8,6 @@ module StaticRam(
     input i_rw,  // read/write >> 1 / 0
     input [5:0] i_addr,
     input [7:0] io_data
-
     );
 
     reg [7:0] mem[0:63];

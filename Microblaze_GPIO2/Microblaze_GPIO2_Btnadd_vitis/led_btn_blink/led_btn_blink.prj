@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="led_btn_blink" location="D:/FPGA/FPGA_project/Microblaze_GPIO2/Microblaze_GPIO2_Btnadd_vitis/led_btn_blink" platform="D:/FPGA/FPGA_project/Microblaze_GPIO2/Microblaze_GPIO2_Btnadd_vitis/design_microblaze_gpio_wrapper2/export/design_microblaze_gpio_wrapper2/design_microblaze_gpio_wrapper2.xpfm" platformUID="xilinx:basys3::0.0(custom)" systemProject="led_btn_blink_system" sysConfig="design_microblaze_gpio_wrapper2" runtime="cpp" cpu="domain_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="ab6c292c0ebefa0e743b85280d5a2fb3">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.204823180">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.2073475173" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

@@ -1,6 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../Single_RAM.srcs/sources_1/new/singleRam.v" \
+"../../../../Single_RAM.srcs/sources_1/new/StaticRam.v" \
 "../../../../Single_RAM.srcs/sim_1/new/tb_SRAM.v" \
 
 # compile glbl module
