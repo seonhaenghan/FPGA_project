@@ -47,46 +47,43 @@
 
 #include "main.h"
 
-
-
 int main()
 {
     init_platform();
 
+    ledInst modeLed;
+    ledInst upLed;
+    ledInst downLed;
     Led_Init();
-
+    Led_MakeInst(&modeLed, LED_0);
+    Led_MakeInst(&upLed, LED_1);
+    Led_MakeInst(&downLed, LED_2);
 
     buttonInst modeButton;
     buttonInst upButton;
     buttonInst downButton;
     buttonInst offButton;
-
     Button_Init();
     Button_MakeInst(&modeButton, BUTTON_0);
     Button_MakeInst(&upButton, BUTTON_1);
     Button_MakeInst(&downButton, BUTTON_2);
     Button_MakeInst(&offButton, BUTTON_3);
-    int state = 0;
+
     while(1)
     {
     	if(Button_GetState(&modeButton))
     	{// LED ALL off <> on
-    		state++;
-    		state %= 2;	// state = state % 2;
-    		if(state) Led_ALL_ON();
-    		else Led_ALL_OFF();
+    		Led_toggle(&modeLed);
     	}
     	if(Button_GetState(&upButton))
     	{
-    		//led right shift 0.3sec
-//    		XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, 0x02);
-    		Led_rightShift(Button_GetState(&offButton));
+    		Led_On(&upLed);
+    		Led_Off(&downLed);
     	}
     	if(Button_GetState(&downButton))
     	{
-    		//led left shift 0.3sec
-//    		XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, 0x04);
-    		Led_leftShift(Button_GetState(&offButton));
+    		Led_Off(&downLed);
+    		Led_On(&upLed);
     	}
     	if(Button_GetState(&offButton))
     	{

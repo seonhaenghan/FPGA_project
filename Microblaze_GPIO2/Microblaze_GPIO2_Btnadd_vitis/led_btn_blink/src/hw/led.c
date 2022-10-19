@@ -10,17 +10,42 @@
 
 XGpio GPIO_LED;
 
+
+
+void Led_MakeInst(ledInst *led, int ledNum)
+{
+	led->ledNum = ledNum;
+}
+
 void Led_Init()
 {
 	XGpio_Initialize(&GPIO_LED, XPAR_AXI_GPIO_0_DEVICE_ID);
 	XGpio_SetDataDirection(&GPIO_LED, CHANNEL_1, OUTPUT);
 }
 
+void Led_On(ledInst *led)
+{
+	int ledState = XGpio_DiscreteRead(&GPIO_LED, CHANNEL_1);
+	XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, ledState | (1<<led->ledNum));
+}
+
+void Led_Off(ledInst *led)
+{
+	int ledState = XGpio_DiscreteRead(&GPIO_LED, CHANNEL_1);
+	XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, ledState & (1<<led->ledNum));
+}
+
+void Led_toggle(ledInst *led)
+{
+	int ledState = XGpio_DiscreteRead(&GPIO_LED, CHANNEL_1);
+	XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, (ledState ^ (1<<led->ledNum)));
+}
 
 void Led_ALL_ON()
 {
 	XGpio_DiscreteWrite(&GPIO_LED, CHANNEL_1, 0xff);
 }
+
 
 void Led_ALL_OFF()
 {
