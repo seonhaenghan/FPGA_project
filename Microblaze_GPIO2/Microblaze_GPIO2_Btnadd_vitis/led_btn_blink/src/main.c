@@ -72,7 +72,7 @@ int main()
     while(1)
     {
     	if(Button_GetState(&modeButton))
-    	{// LED ALL off <> on
+    	{
     		Led_toggle(&modeLed);
     	}
     	if(Button_GetState(&upButton))
@@ -82,8 +82,9 @@ int main()
     	}
     	if(Button_GetState(&downButton))
     	{
-    		Led_Off(&downLed);
-    		Led_On(&upLed);
+    		Led_On(&downLed);
+    		Led_Off(&upLed);
+
     	}
     	if(Button_GetState(&offButton))
     	{
