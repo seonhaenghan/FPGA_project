@@ -115,8 +115,6 @@ proc step_failed { step } {
 }
 
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "Implementation" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -136,8 +134,8 @@ OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir D:/FPGA/FPGA_project/Microblaze_FndController/Microblaze_FndController.cache/wt [current_project]
   set_property parent.project_path D:/FPGA/FPGA_project/Microblaze_FndController/Microblaze_FndController.xpr [current_project]
   set_property ip_repo_paths {
-  d:/FPGA/IP_Repository/AXI4_FndController
   d:/FPGA/IP_Repository/AXI4_BCDtoFND
+  D:/FPGA/IP_Repository/AXI4_Fndcontrol
   d:/FPGA/IP_Repository/AXI4_tickgenerator
 } [current_project]
   update_ip_catalog

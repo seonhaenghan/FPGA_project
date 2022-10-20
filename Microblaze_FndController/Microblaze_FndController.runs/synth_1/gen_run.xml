@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1666245805">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1666254877">
   <File Type="PA-TCL" Name="design_mb_tg_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_mb_tg_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_mb_tg_wrapper_reports.tcl"/>
@@ -56,7 +56,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_ilmb_bram_if_cntlr_0"/>
@@ -72,7 +74,7 @@
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_rst_clk_wiz_1_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_AXI4_fndController_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_axi_uartlite_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_mb_tg_AXI4_fndController_0_0"/>
 </GenRun>

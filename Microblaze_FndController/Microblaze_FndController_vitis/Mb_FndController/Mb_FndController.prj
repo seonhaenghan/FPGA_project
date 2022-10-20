@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Mb_FndController" location="D:/FPGA/FPGA_project/Microblaze_FndController/Microblaze_FndController_vitis3/Mb_FndController" platform="D:/FPGA/FPGA_project/Microblaze_FndController/Microblaze_FndController_vitis3/design_mb_tg_wrapper3/export/design_mb_tg_wrapper3/design_mb_tg_wrapper3.xpfm" platformUID="xilinx:basys3::0.0(custom)" systemProject="Mb_FndController_system" sysConfig="design_mb_tg_wrapper3" runtime="cpp" cpu="domain_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="85e1b3066c03abe8e10ce435bfdd7691">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.806353951">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.65855830" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

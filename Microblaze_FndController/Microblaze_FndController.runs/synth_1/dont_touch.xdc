@@ -51,10 +51,10 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_mb_tg_mi
 # IP: bd/design_mb_tg/ip/design_mb_tg_AXI4_TickGenerator_0_0/design_mb_tg_AXI4_TickGenerator_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_mb_tg_AXI4_TickGenerator_0_0 || ORIG_REF_NAME==design_mb_tg_AXI4_TickGenerator_0_0} -quiet] -quiet
 
-# IP: bd/design_mb_tg/ip/design_mb_tg_AXI4_fndController_0_0/design_mb_tg_AXI4_fndController_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_mb_tg_AXI4_fndController_0_0 || ORIG_REF_NAME==design_mb_tg_AXI4_fndController_0_0} -quiet] -quiet
-
 # IP: bd/design_mb_tg/ip/design_mb_tg_axi_gpio_2_0/design_mb_tg_axi_gpio_2_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_mb_tg_axi_gpio_2_0 || ORIG_REF_NAME==design_mb_tg_axi_gpio_2_0} -quiet] -quiet
+
+# IP: bd/design_mb_tg/ip/design_mb_tg_AXI4_fndController_0_2/design_mb_tg_AXI4_fndController_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_mb_tg_AXI4_fndController_0_2 || ORIG_REF_NAME==design_mb_tg_AXI4_fndController_0_2} -quiet] -quiet
 
 # XDC: bd/design_mb_tg/design_mb_tg_ooc.xdc

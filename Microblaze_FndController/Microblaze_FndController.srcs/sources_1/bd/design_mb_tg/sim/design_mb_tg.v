@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Thu Oct 20 15:03:16 2022
+//Date        : Thu Oct 20 17:34:33 2022
 //Host        : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 //Command     : generate_target design_mb_tg.bd
 //Design      : design_mb_tg
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_mb_tg,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_mb_tg,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_board_cnt=7,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_mb_tg.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_mb_tg,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_mb_tg,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=10,da_board_cnt=7,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_mb_tg.hwdef" *) 
 module design_mb_tg
    (button_tri_i,
     button_tri_o,
@@ -35,7 +35,7 @@ module design_mb_tg
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led TRI_O" *) output [7:0]led_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led TRI_T" *) output [7:0]led_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 switch " *) input [1:0]switch_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 switch TRI_I" *) input [1:0]switch_tri_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 switch TRI_O" *) output [1:0]switch_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 switch TRI_T" *) output [1:0]switch_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_mb_tg_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000" *) input sys_clock;
@@ -254,7 +254,7 @@ module design_mb_tg
         .s00_axi_wready(microblaze_0_axi_periph_M00_AXI_WREADY),
         .s00_axi_wstrb(microblaze_0_axi_periph_M00_AXI_WSTRB),
         .s00_axi_wvalid(microblaze_0_axi_periph_M00_AXI_WVALID));
-  design_mb_tg_AXI4_fndController_0_0 AXI4_fndController_0
+  design_mb_tg_AXI4_fndController_0_2 AXI4_fndController_0
        (.o_fndFont(AXI4_fndController_0_o_fndFont),
         .o_fndSelect(AXI4_fndController_0_o_fndSelect),
         .s00_axi_aclk(microblaze_0_Clk),
