@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Microblaze_GPIO_Timer_Interrupt" location="D:/FPGA/FPGA_project/Microblaze_GPIO_Timer_Interrupt/Microblaze_GPIO_Timer_Interrupt_vitis/Microblaze_GPIO_Timer_Interrupt" platform="D:/FPGA/FPGA_project/Microblaze_GPIO_Timer_Interrupt/Microblaze_GPIO_Timer_Interrupt_vitis/design_MB_GPIO_Timer_int_wrapper/export/design_MB_GPIO_Timer_int_wrapper/design_MB_GPIO_Timer_int_wrapper.xpfm" platformUID="xilinx:basys3::0.0(custom)" systemProject="Microblaze_GPIO_Timer_Interrupt_system" sysConfig="design_MB_GPIO_Timer_int_wrapper" runtime="cpp" cpu="domain_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="a76511905861f3a5081a2104df2c864b">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1165062958" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.692924580" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>
