@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Fri Oct 21 10:50:46 2022
+//Date        : Fri Oct 21 11:34:22 2022
 //Host        : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 //Command     : generate_target design_MB_GPIO_Timer_int.bd
 //Design      : design_MB_GPIO_Timer_int
@@ -21,12 +21,12 @@ module design_MB_GPIO_Timer_int
     sys_clock,
     usb_uart_rxd,
     usb_uart_txd);
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn " *) input [3:0]btn_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn " *) output [3:0]btn_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn " *) output [3:0]btn_tri_t;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led " *) input [7:0]led_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led " *) output [7:0]led_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led " *) output [7:0]led_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn TRI_I" *) input [3:0]btn_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn TRI_O" *) output [3:0]btn_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 btn TRI_T" *) output [3:0]btn_tri_t;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led TRI_I" *) input [7:0]led_tri_i;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led TRI_O" *) output [7:0]led_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led TRI_T" *) output [7:0]led_tri_t;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input reset;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLOCK, CLK_DOMAIN design_MB_GPIO_Timer_int_sys_clock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000" *) input sys_clock;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
