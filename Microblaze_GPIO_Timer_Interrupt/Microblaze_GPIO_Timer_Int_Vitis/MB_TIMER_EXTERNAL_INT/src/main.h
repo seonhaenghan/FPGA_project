@@ -16,5 +16,6 @@
 #include "sleep.h"
 #include "xil_exception.h"
 #include "xintc.h"
+#include "xtmrctr.h"
 
 #endif /* SRC_MAIN_H_ */

@@ -47,7 +47,7 @@
 
 #include "main.h"
 
-#define CHANNEL_1 	1
+#define CHANNEL_1 			1
 #define GPIO_BTN_DEVICE_ID	XPAR_GPIO_1_DEVICE_ID
 #define	BTN_INT_MSK_		XGPIO_IR_CH1_MASK
 
@@ -56,46 +56,95 @@
 #define INTC_DEVICE_ID		XPAR_INTC_0_DEVICE_ID
 #define INTC_BTN_INT_VEC_ID	XPAR_INTC_0_GPIO_1_VEC_ID
 
+#define TMRCTR_DEVICE_ID	XPAR_TMRCTR_0_DEVICE_ID
+#define TMRCTR_INT_VEC_ID	XPAR_INTC_0_TMRCTR_0_VEC_ID
+#define TIMER_CNTR_0		0
+
+uint32_t resetValue = 0xffffffff - 100000000; // 1sec
+//uint32_t resetValue = 0xffffffff - 1000000; // 10msec
+//uint32_t resetValue = 0xffffffff - 100000; // 1msec
+
+
+void TimerCounterHandler(void *CallBackRef, uint8_t TmrCtrNumber);
 void GpioHandler(void *CallBackRef);
 
+
+XTmrCtr TimerCounterInst;
 XGpio Gpio_Led;
 XGpio Gpio_Button;
 XIntc Intc;
 
-int main()
+void Led_Init()
 {
-    init_platform();
-
-    // LED Init
+    // LED Initial
     XGpio_Initialize(&Gpio_Led, GPIO_LED_DEVICE_ID);
     XGpio_SetDataDirection(&Gpio_Led, CHANNEL_1, 0x00);
+}
 
-    // Button Init
+void Button_Init()
+{
+    // Button Initial
     XGpio_Initialize(&Gpio_Button, GPIO_BTN_DEVICE_ID);
 	XGpio_SetDataDirection(&Gpio_Button, CHANNEL_1, 0x0f);
+}
 
-	// Interrupt Setup
-	XIntc_Initialize(&Intc, INTC_DEVICE_ID);	// Interrupt Controller
+void Intr_Init()
+{
+		// Interrupt Setup
+		XIntc_Initialize(&Intc, INTC_DEVICE_ID);	// Interrupt Controller
 
-	// Interrupt Controller Vector Table Jump
-	XIntc_Connect(&Intc, INTC_BTN_INT_VEC_ID,
-			(Xil_ExceptionHandler)GpioHandler, &Gpio_Button);
+		// Interrupt Controller Vector Table Jump
+		XIntc_Connect(&Intc, INTC_BTN_INT_VEC_ID,
+				(Xil_ExceptionHandler)GpioHandler,
+				&Gpio_Button);
 
-	//Enable the Interrupt vector at the interrupt controller
-	XIntc_Enable(&Intc, INTC_BTN_INT_VEC_ID);
+		//Enable the Interrupt vector at the interrupt controller
+		XIntc_Enable(&Intc, INTC_BTN_INT_VEC_ID);
 
-	//Start the interrupt controller such that interrupt are recognized
-	//and handled by the processor
-	XIntc_Start(&Intc, XIN_REAL_MODE);
+		//Start the interrupt controller such that interrupt are recognized
+		//and handled by the processor
+		XIntc_Start(&Intc, XIN_REAL_MODE);
 
-	XGpio_InterruptEnable(&Gpio_Button, CHANNEL_1);
-	XGpio_InterruptGlobalEnable(&Gpio_Button);
 
-	//Exception Setup
-	Xil_ExceptionInit();
-	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
-			(Xil_ExceptionHandler)XIntc_InterruptHandler, &Intc);
-	Xil_ExceptionEnable();
+		//Gpio Interrupt Enable
+		XGpio_InterruptEnable(&Gpio_Button, CHANNEL_1);
+		XGpio_InterruptGlobalEnable(&Gpio_Button);
+
+		//Exception Setup
+		Xil_ExceptionInit();
+		Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+				(Xil_ExceptionHandler)XIntc_InterruptHandler, &Intc);
+		Xil_ExceptionEnable();
+
+		// Vector Table에 점프하기 위한 Connect
+		XIntc_Connect(&Intc, TMRCTR_INT_VEC_ID,
+				(XInterruptHandler)XTmrCtr_InterruptHandler,
+				&TimerCounterInst);
+
+		XIntc_Enable(&Intc, TMRCTR_INT_VEC_ID);
+		XTmrCtr_SetHandler(&TimerCounterInst,
+							TimerCounterHandler,
+							&TimerCounterInst);
+
+		XTmrCtr_SetOptions(&TimerCounterInst, TIMER_CNTR_0, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
+
+		XTmrCtr_SetResetValue(&TimerCounterInst, TIMER_CNTR_0, resetValue);
+		XTmrCtr_Start(&TimerCounterInst, TIMER_CNTR_0);
+
+}
+
+
+int main()
+{
+	init_platform();
+	Led_Init();
+	Button_Init();
+
+	XTmrCtr_Initialize(&TimerCounterInst, TMRCTR_DEVICE_ID);
+	XTmrCtr_SelfTest(&TimerCounterInst, TIMER_CNTR_0);
+
+	Intr_Init();
+
 
 	while(1)
 	{
@@ -129,8 +178,12 @@ void GpioHandler(void *CallBackRef)
 	{
 		printf("Pushed Button4!\n");
 	}
-
-
 		XGpio_InterruptClear(pGpio, CHANNEL_1);
 
+}
+
+void TimerCounterHandler(void *CallBackRef, uint8_t TmrCtrNumber0)
+{
+	static int counter = 0;
+	printf("timer/counter interrupt : %d\n", counter++);
 }
