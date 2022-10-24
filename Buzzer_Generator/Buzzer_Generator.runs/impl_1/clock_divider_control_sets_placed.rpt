@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sat Oct 22 12:01:55 2022
+| Date         : Sun Oct 23 02:11:32 2022
 | Host         : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file clock_divider_control_sets_placed.rpt
 | Design       : clock_divider
@@ -59,7 +59,7 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |              33 |           13 |
+| No           | No                    | Yes                    |              33 |           14 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
@@ -70,10 +70,10 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+---------------+------------------+------------------+----------------+--------------+
-|   Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------+---------------+------------------+------------------+----------------+--------------+
-|  i_clk_IBUF_BUFG |               | i_reset_IBUF     |               13 |             33 |         2.54 |
-+------------------+---------------+------------------+------------------+----------------+--------------+
++------------------+---------------+-----------------------+------------------+----------------+--------------+
+|   Clock Signal   | Enable Signal |    Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+---------------+-----------------------+------------------+----------------+--------------+
+|  i_clk_IBUF_BUFG |               | r_counter[31]_i_2_n_0 |               14 |             33 |         2.36 |
++------------------+---------------+-----------------------+------------------+----------------+--------------+
 
 

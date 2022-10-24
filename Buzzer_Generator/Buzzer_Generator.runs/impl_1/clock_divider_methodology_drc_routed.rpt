@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sat Oct 22 12:02:23 2022
+| Date         : Sun Oct 23 02:12:01 2022
 | Host         : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 | Command      : report_methodology -file clock_divider_methodology_drc_routed.rpt -pb clock_divider_methodology_drc_routed.pb -rpx clock_divider_methodology_drc_routed.rpx
 | Design       : clock_divider
@@ -23,21 +23,36 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 4
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 2          |
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay | 3          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell r_counter[31]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) r_clk_reg/CLR, r_counter_reg[0]/CLR, r_counter_reg[10]/CLR,
+r_counter_reg[11]/CLR, r_counter_reg[12]/CLR, r_counter_reg[13]/CLR,
+r_counter_reg[14]/CLR, r_counter_reg[15]/CLR, r_counter_reg[16]/CLR,
+r_counter_reg[17]/CLR, r_counter_reg[18]/CLR, r_counter_reg[19]/CLR,
+r_counter_reg[1]/CLR, r_counter_reg[20]/CLR, r_counter_reg[21]/CLR (the first 15 of 33 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on i_BER relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#2 Warning
 Missing input or output delay  
 An input delay is missing on i_reset relative to clock(s) sys_clk_pin
 Related violations: <none>
 
-TIMING-18#2 Warning
+TIMING-18#3 Warning
 Missing input or output delay  
 An output delay is missing on o_clk relative to clock(s) sys_clk_pin
 Related violations: <none>
