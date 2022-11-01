@@ -68,7 +68,7 @@ set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports { i_reset
 
 ##Buttons
 
-set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { i_BER }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
+#set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { i_BER }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
 #set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports { btnU }]; #IO_L17N_T2_A13_D29_14 ,Sch=BTNU
 #set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { btnL }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
 #set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { btnR }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
