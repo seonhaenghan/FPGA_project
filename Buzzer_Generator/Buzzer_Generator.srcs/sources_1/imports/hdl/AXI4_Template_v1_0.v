@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module AXI4_BCDtoFND #
+	module AXI4_BuzzerGenerator #
 	(
 		// Users to add parameters here
 
@@ -51,7 +51,7 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) AXI4_Template_v1_0_S00_AXI_inst (
-		.i_BER(w_BER),
+		.o_BER(w_BER),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

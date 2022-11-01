@@ -2,8 +2,8 @@
 
 module clock_divider(
     input i_clk,
-    input i_BER, // buzzer enable register 
     input i_reset,
+    input i_BER, // buzzer enable register 
     output o_clk
     );
     reg r_clk = 0;
@@ -16,7 +16,7 @@ module clock_divider(
             r_counter <= 0; 
         end
         else begin
-            if(i_BER == 1'b1) begin
+            if(i_BER) begin
                 if (r_counter == (50_000_000/440) -1) begin
                 r_counter <= 0;
                 r_clk <= ~r_clk;
