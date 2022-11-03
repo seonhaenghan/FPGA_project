@@ -27,7 +27,6 @@ module top_Motor(
     );
 
     Motor_Sequence Motor_Sequence(
-    .i_SMR_MS1(i_SMR[1]),            // CW or CCW
     .i_counter(w_counter),
     .o_motor_clk(o_motor_step)
     );

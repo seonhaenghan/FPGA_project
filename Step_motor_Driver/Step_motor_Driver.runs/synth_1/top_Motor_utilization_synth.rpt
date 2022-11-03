@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Thu Nov  3 14:04:26 2022
+| Date         : Thu Nov  3 16:40:26 2022
 | Host         : LAPTOP-F74GHAFM running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_Motor_utilization_synth.rpt -pb top_Motor_utilization_synth.pb
 | Design       : top_Motor
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   64 |     0 |     20800 |  0.31 |
-|   LUT as Logic          |   64 |     0 |     20800 |  0.31 |
+| Slice LUTs*             |   66 |     0 |     20800 |  0.32 |
+|   LUT as Logic          |   66 |     0 |     20800 |  0.32 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |   46 |     0 |     41600 |  0.11 |
 |   Register as Flip Flop |   46 |     0 |     41600 |  0.11 |
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    8 |     0 |       106 |  7.55 |
+| Bonded IOB                  |    9 |     0 |       106 |  8.49 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -150,14 +150,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |   46 |        Flop & Latch |
-| LUT3     |   37 |                 LUT |
-| LUT6     |   27 |                 LUT |
-| LUT4     |   13 |                 LUT |
+| LUT6     |   41 |                 LUT |
+| LUT4     |   23 |                 LUT |
 | CARRY4   |   11 |          CarryLogic |
-| LUT5     |    7 |                 LUT |
+| LUT3     |    6 |                 LUT |
+| IBUF     |    5 |                  IO |
 | OBUF     |    4 |                  IO |
-| IBUF     |    4 |                  IO |
-| LUT2     |    3 |                 LUT |
+| LUT5     |    4 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
