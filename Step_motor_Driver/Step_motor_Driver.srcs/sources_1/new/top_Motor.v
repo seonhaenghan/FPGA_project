@@ -3,7 +3,7 @@
 module top_Motor(
     input i_clk,
     input i_reset,
-    input [1:0]i_SMR,
+    input [3:0]i_SMR,
     output [3:0]o_motor_step
     );
 
@@ -13,6 +13,7 @@ module top_Motor(
     .i_clk(i_clk),
     .i_reset(i_reset),
     .i_SMR_enable(i_SMR[0]),
+    .i_SMR_speed(i_SMR[3:2]),
     .o_clk(w_clk)
     );
 
