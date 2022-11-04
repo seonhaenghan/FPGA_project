@@ -3,6 +3,7 @@
 module cycle_counter(
     input i_clk,
     input i_reset,
+    input i_SMR_MS1,
     input i_SMR_enable,
     
     output [12:0]o_counter
@@ -18,12 +19,22 @@ module cycle_counter(
         end
         else begin
             if(i_SMR_enable) begin 
-                if(r_counter == 4096) begin
-                r_counter <= 0;
+                if(i_SMR_MS1) begin
+                     if(r_counter == 0) begin
+                        r_counter <= 4096;
+                     end
+                     else begin
+                        r_counter <= r_counter - 1;
+                     end
                 end
                 else begin
-                    r_counter <= r_counter + 1;
-                end  
+                    if(r_counter == 4096) begin
+                    r_counter <= 0;
+                    end
+                    else begin
+                        r_counter <= r_counter + 1;
+                    end 
+                end
             end
             else begin
             r_counter <= 0; 
