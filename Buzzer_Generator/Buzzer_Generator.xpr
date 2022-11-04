@@ -29,6 +29,8 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../IP_Repository/AXI4_stepMotor"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../IP_Repository/AXI4_BuzzerGener"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PSRCDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -95,7 +97,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../IP_Repository/AXI4_BuzzerGener/component.xml">
+      <File Path="$PPRDIR/../../IP_Repository/AXI4_buzzerGener/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>

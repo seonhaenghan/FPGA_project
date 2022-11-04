@@ -398,7 +398,7 @@
 	end    
 
 	// Add user logic here
-	assign o_BER = slv_reg0;
+	assign o_BER = slv_reg0[0];
 	// User logic ends
 
 	endmodule
