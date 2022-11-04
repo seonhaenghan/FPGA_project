@@ -10,7 +10,7 @@ module clock_divider(
     reg [31:0] r_counter = 0;
     assign o_clk = r_clk;
     
-    always @(posedge i_clk or posedge i_reset or posedge i_BER) begin
+    always @(posedge i_clk or posedge i_reset) begin
         if(!i_reset) begin
             r_clk <= 0; 
             r_counter <= 0; 
